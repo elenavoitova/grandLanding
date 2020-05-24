@@ -1,0 +1,17 @@
+$text-color: #686868;
+$light-bg: #fff;
+
+$juicy-orange: #ff7029;
+$juicy-green: #57b33e;
+
+@mixin flex-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+@mixin flex-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+  }

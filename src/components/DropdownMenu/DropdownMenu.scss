@@ -1,0 +1,19 @@
+.dd-wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.dd-header {
+    display: flex;
+    align-items: center;
+}
+
+.dd-header-title {
+    padding-right: 8px;
+}
+
+.dd-list {
+    position: absolute;
+    width: max-content;
+    z-index: 99999;
+}

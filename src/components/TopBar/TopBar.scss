@@ -1,0 +1,121 @@
+@import '../../variables.scss';
+
+$interval: 10px;
+@mixin hover-state {
+    color: $juicy-green;
+    // font-weight: 400;
+}
+
+
+
+.top-bar {
+    width: 100%;
+    // position: fixed;
+    top: 0;
+    // left: 0;
+    color: #fff;
+    background-color: #2d2d2d;
+    -webkit-box-shadow: 0px 2px 5px 0px #040404;
+    -moz-box-shadow: 0px 2px 5px 0px #040404;
+    box-shadow: 0px 2px 5px 0px #040404;
+
+    &__wrapper {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    &__wrap-left {
+        @include flex-left;
+    }
+
+    address {
+        padding-right: $interval;
+        margin-right: $interval;
+        border-right: 2px solid $text-color;
+        font-style: normal;
+        line-height: 16px;
+    }
+
+    &__email {
+        padding-right: $interval;
+        font-weight: 600;
+
+        & a {
+            padding-left: 2px;
+        }
+    }
+
+    &__email:hover {
+        & a,  & svg {
+            @include hover-state();
+        }
+    }
+
+    &__wrap-right {
+        @include flex-right;
+    }
+
+    &__FAQ {
+        padding-right: $interval;
+        margin-right: $interval;
+        border-right: 2px solid $text-color;
+        line-height: 16px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+            @include hover-state();
+        }
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: space-evenly;
+        width: 120px;
+        background-color: $juicy-green;
+        color: #fff;
+
+        & svg {
+            color: #fff;
+        }
+    }
+
+    // &__socials:hover {
+    //     & {
+    //         background-color: $juicy-green;
+    //         color: #fff;
+    //     }
+    //     & svg {
+    //         color: #fff;
+    //     }
+    // }
+
+    //override dropdown style
+    .dd-header {
+        background-color: $juicy-orange;
+        border-radius: 12px;
+        padding: 0 5px;
+        &-title {
+        font-weight: 600;
+        color: #fff;
+        }
+
+        & svg {
+            color: #fff;
+        }
+    }
+
+    .dd-list {
+        left: -20px;
+    }
+    
+    .dd-list-item {
+        background-color: $juicy-orange;
+        border-radius: 12px;
+        padding: 0 5px;
+        margin: 5px 0;
+        color: #fff;
+    }
+}
