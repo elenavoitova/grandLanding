@@ -9,6 +9,9 @@ import DropdownMenu from '../DropdownMenu/DropdownMenu';
 function TopBar() {
   const phoneList = [
     {
+      item: <Link to="/">Back to home</Link>
+    },
+    {
       item: <Link to="/2">Banner var 2</Link>
     },
     {
@@ -32,7 +35,7 @@ function TopBar() {
             <address className="top-bar__address">Київ, вул. Градинська 7</address>
             <div className="top-bar__email"><FontAwesomeIcon icon={faEnvelope}/><a href = "mailto:iRecco@mail.com">iRecco@mail.com</a></div>
             <DropdownMenu
-              title="Варианты баннера"
+              title="Banner options"
               list={phoneList}
               />
           </div>
