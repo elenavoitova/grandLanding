@@ -8,7 +8,7 @@ function Banner1() {
     from: { opacity: "0"},
     to: { opacity: "1" },
     config: config.slow,
-    delay: 3000
+    delay: 6000
   });
 
   // const animateRight = useSpring({
@@ -36,7 +36,7 @@ function Banner1() {
       opacity: 1
       },
     config: config.wobbly,
-    delay: 1000
+    delay: 4000
   });
 
   const animateUp = useSpring({
@@ -49,7 +49,7 @@ function Banner1() {
       opacity: 1
       },
     config: config.default,
-    delay: 2000
+    delay: 5000
   });
 
   return (
