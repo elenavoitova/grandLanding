@@ -5,7 +5,7 @@ import "./Banner3.scss";
 function Banner3() {
 
   const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2]
-  const trans = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`
+  const trans = (x, y) => `translate3d(${x / 15}px,${y / 15}px,0)`
 
   const [perspect, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 140 } }));
   const { x } = useSpring({ from: { x: 0 }, to: {x: 1}, config: config.slow})

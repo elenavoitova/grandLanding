@@ -10,40 +10,61 @@ $interval: 10px;
 
 .top-bar {
     width: 100%;
-    // position: fixed;
+    max-width: 1600px;
+    position: fixed;
+    z-index: 99999;
     top: 0;
-    // left: 0;
     color: #fff;
-    background-color: #2d2d2d;
+    background-color: $dark-bg;
     -webkit-box-shadow: 0px 2px 5px 0px #040404;
     -moz-box-shadow: 0px 2px 5px 0px #040404;
     box-shadow: 0px 2px 5px 0px #040404;
+
+    &__content {
+        width: 98%;
+        max-width: 1600px;
+        margin: 0 auto;
+    }
 
     &__wrapper {
         display: flex;
         align-content: center;
         justify-content: space-between;
-        padding: 20px 0;
+        padding: 5px 0;
     }
 
     &__wrap-left {
         @include flex-left;
     }
 
-    address {
+    &__logo {
+        width: 100px;
+        padding: 0 10px;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__address {
         padding-right: $interval;
         margin-right: $interval;
         border-right: 2px solid $text-color;
         font-style: normal;
         line-height: 16px;
+        font-size: 14px;
+        font-weight: lighter;
     }
 
     &__email {
         padding-right: $interval;
         font-weight: 600;
+        font-size: 14px;
+        font-weight: lighter;
 
-        & a {
-            padding-left: 2px;
+        a {
+            padding-left: 5px;
+            line-height: 28px;
         }
     }
 
@@ -53,18 +74,46 @@ $interval: 10px;
         }
     }
 
+    &__phone {
+        display: flex;
+        align-items: center;
+        padding-left: $interval;
+        margin-left: $interval;
+        border-left: 2px solid $text-color;
+
+        .fa-phone-volume{
+            transform: rotate(-45deg);
+            font-size: 25px;
+            margin-right: 10px;
+        }
+
+        a {
+            font-style: normal;
+            font-size: 18px;
+            color: $juicy-green;
+            font-weight: bolder;
+            transition: color 0.5s;
+        }
+    
+        a:hover {
+            color: $juicy-orange;
+        }
+    }
+
     &__wrap-right {
         @include flex-right;
     }
 
-    &__FAQ {
+    &__lang {
         padding-right: $interval;
         margin-right: $interval;
         border-right: 2px solid $text-color;
         line-height: 16px;
         cursor: pointer;
         font-weight: 600;
+    }
 
+    &__lang-ukr, &__lang-ru {
         &:hover {
             @include hover-state();
         }
@@ -73,49 +122,29 @@ $interval: 10px;
     &__socials {
         display: flex;
         justify-content: space-evenly;
-        width: 120px;
-        background-color: $juicy-green;
+        align-items: center;
+        padding: 3px 10px;
+        border: 2px solid $juicy-green;
+        // border: 2px solid #fff;
         color: #fff;
+        font-size: 14px;
+        background-color: transparent;
+        transition: background-color 0.5s;
 
-        & svg {
+        &:hover {
+            background-color: $juicy-green;
+        }
+
+        .fa-facebook {
+            box-sizing: content-box;
+            padding-left: 5px;
+            margin-left: 5px;
+            font-size: 18px;
             color: #fff;
+            border-left: 2px solid $juicy-green;
+            // border-left: 2px solid #fff;
         }
     }
 
-    // &__socials:hover {
-    //     & {
-    //         background-color: $juicy-green;
-    //         color: #fff;
-    //     }
-    //     & svg {
-    //         color: #fff;
-    //     }
-    // }
-
-    //override dropdown style
-    .dd-header {
-        background-color: $juicy-orange;
-        border-radius: 12px;
-        padding: 0 5px;
-        &-title {
-        font-weight: 600;
-        color: #fff;
-        }
-
-        & svg {
-            color: #fff;
-        }
-    }
-
-    .dd-list {
-        left: -20px;
-    }
     
-    .dd-list-item {
-        background-color: $juicy-orange;
-        border-radius: 12px;
-        padding: 0 5px;
-        margin: 5px 0;
-        color: #fff;
-    }
 }

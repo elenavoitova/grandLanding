@@ -1,0 +1,61 @@
+@import "../../variables.scss";
+
+.separator {
+    position: absolute;
+    z-index: 10;
+
+
+.layer {
+    // margin: 0 auto;
+    // width: 500px; 
+    position:relative;
+  }
+  
+  .outer {
+    width:40px;
+    height:40px; 
+    position:absolute;
+    left: 30px;
+    border-radius:100%;
+    box-shadow: 0px 3px 12px 0px #959894;
+    background:#fff;
+  }
+  
+  .inner {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+      inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .inner svg {
+    color: #57b33e;
+    font-size: 6px;
+  }
+
+  .dot-1 {
+    position: absolute;
+    top: 12px;
+    left: 7px;
+  }
+
+  .dot-2 {
+    position: absolute;
+    top: 12px;
+    left: 17px;
+  }
+
+  .fa-plug {
+    position: absolute;
+    top: 25px;
+    left: 14px;
+    color: #57b33e;
+    font-size: 30px;
+    transform: rotate(45deg);
+  }
+
+}

@@ -1,0 +1,41 @@
+@import "../../variables.scss";
+
+.call-us-bg {
+    background: linear-gradient(0deg, $dark-bg 50%, $light-bg 50%);
+
+    &__wrap {
+        position: relative;
+        max-width: 1190px;
+        height: 200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-attachment: fixed;
+    }
+
+    &__info-main {
+        color: #fff;
+        font-weight: 600;
+        font-size: 23px;
+    }
+
+    &__info-additional {
+        color: #fff;
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 200;
+    }
+
+    &__wk {
+        font-family: 'Poppins', sans-serif;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+        letter-spacing: 1px;
+        line-height: 144px;
+        font-weight: 900;
+        font-size: 144px;
+        text-transform: uppercase;
+        color: transparent;
+        user-select: none;
+    }
+}

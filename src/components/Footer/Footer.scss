@@ -1,0 +1,141 @@
+@import "../../variables.scss";
+
+.footer {
+    // height: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: linear-gradient(180deg, $dark-bg 95%, $juicy-green 100%);
+
+    &__content {
+        // width: 1170px;
+        // margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__company {
+        width: 30%;
+        color: #fff;
+        text-align: justify;
+
+        &-logo {
+            width: 200px;
+        }
+
+        &-fb {
+            font-size: 30px;
+            color: $juicy-green;
+
+            &:hover {
+                color: $juicy-orange;
+            }
+        }
+    }
+
+
+    &__contacts {
+        width: 30%;
+        height: 300px;
+        color: #fff;
+    }
+
+    &__schedule {
+        margin-bottom: 20px;
+
+        .fa-clock {
+            font-size: 25px;
+            margin-right: 20px;
+            color: $juicy-green;
+            transition: color 1s;
+        }
+
+        span {
+            font-style: normal;
+            font-size: 16px;
+        }
+    }
+
+    &__schedule:hover .fa-clock{
+        color: $juicy-orange;
+    }
+
+    .schedule-indicator {
+        display: inline-block;
+        margin: 0 3px 0 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    &__address {
+        margin-bottom: 20px;
+        .fa-map-marker-alt {
+            font-size: 25px;
+            margin-left: 3px;
+            margin-right: 20px;
+            color: $juicy-green;
+            transition: color 1s;
+        }
+
+        a {
+            text-decoration-color: $juicy-green;
+            text-decoration-line: underline;
+            font-size: 14px; 
+            padding-left: 10px;
+        }
+
+        span {
+            font-style: normal;
+            font-size: 16px;
+        }
+    }
+
+    &__address:hover .fa-map-marker-alt{
+        color: $juicy-orange;
+    }
+
+    &__email {
+        margin-bottom: 20px;
+        .fa-envelope {
+            font-size: 25px;
+            margin-right: 20px;
+            color: $juicy-green;
+            transition: color 1s;
+        }
+
+        a {
+            font-style: normal;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }
+
+    &__email:hover .fa-envelope{
+        color: $juicy-orange;
+    }
+
+    &__phone {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+
+        .fa-phone-volume{
+            transform: rotate(-45deg);
+            font-size: 25px;
+            margin-left: 4px;
+            margin-right: 21px;
+            color: $juicy-green;
+            transition: color 1s;
+        }
+
+        a {
+            font-style: normal;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+    }
+
+    &__phone:hover .fa-phone-volume{
+        color: $juicy-orange;
+    }
+}

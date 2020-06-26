@@ -1,5 +1,7 @@
 $text-color: #686868;
 $light-bg: #fff;
+$light-dark-bg: #F8F8F8;
+$dark-bg: #20242c;
 
 $juicy-orange: #ff7029;
 $juicy-green: #57b33e;
@@ -7,11 +9,11 @@ $juicy-green: #57b33e;
 @mixin flex-left {
     display: flex;
     justify-content: flex-start;
-    align-items: baseline;
+    align-items: center;
 }
 
 @mixin flex-right {
     display: flex;
     justify-content: flex-end;
-    align-items: baseline;
+    align-items: center;
   }

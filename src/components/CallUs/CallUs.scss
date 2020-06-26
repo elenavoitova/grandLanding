@@ -1,0 +1,103 @@
+@import "../../variables.scss";
+
+.call-us {
+    background: linear-gradient(0deg, #fff 50%, #F8F8F8 50%);
+    margin-bottom: 100px;
+
+    &__wrap {
+        position: relative;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $light-bg;
+        box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);;
+    }
+
+    .call-us__icon {
+        position: absolute;
+        top: 50%;
+        left: 355px;
+        border-radius: 50%; 
+        background-color: #fff;
+
+
+        svg {
+            position: absolute;
+            top: 15px;
+            left: 22px;
+            transform: rotate(-45deg);
+            color: $juicy-green;
+            font-size: 40px;
+        }
+
+        .outer {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            margin-top: -40px;
+            margin-left: -25px;
+            border-radius: 100%;
+            box-shadow: 0px 3px 12px 0px $juicy-green;
+            background: #fff;
+        }
+          
+        .inner {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+              inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+        }
+
+
+    }
+
+    &__wrap:hover .call-us__icon{
+        .outer {
+            box-shadow: 0px 3px 12px 0px $juicy-orange;
+            background: #fff;
+        }
+
+        svg {
+            color: $juicy-orange;
+            font-size: 40px;
+        }
+    }
+
+    &__wrap:hover .call-us__info-main > span {
+            font-weight: bolder;
+    }
+
+    &__img {
+        width: 375px;
+        align-self: stretch;
+        background-size: cover;
+        background-position-y: -61px;
+    }
+
+    &__info {
+        flex-grow: 1;
+        margin-left: 27px;
+        text-align: center;
+    }
+
+    &__info-main {
+        font-weight: 600;
+        font-size: 23px;
+
+        & span {
+            // font-size: 26px;
+            color: $juicy-orange;
+        }
+    }
+
+    &__info-additional {
+        font-size: 16px;
+        line-height: 40px;
+        font-weight: 200;
+    }
+}

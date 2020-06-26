@@ -12,7 +12,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "Muli", sans-serif;
+  font-family: 'Merriweather', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -54,8 +54,7 @@ select {
 }
 
 .container {
-  width: 98vw;
-  max-width: 1440px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -66,33 +65,4 @@ select {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-
-/* banner DELETE */
-.banner {
-  position: relative;
-  z-index: -1;
-}
-
-.thin {
-  position: absolute;
-  top: 130px;
-  left: 400px;
-  font-size: 130px;
-  font-weight: 100;
-  /* color: grey; */
-  color: transparent; /* прозрачный цвет букв */
-  -webkit-text-stroke: 1px grey;
-  -webkit-text-stroke-width: 2px;
-  /* border-color: 5px solid grey; */
-}
-
-.main {
-  position: absolute;
-  font-size: 100px;
-}
-
-.description {
-  position: absolute;
 }

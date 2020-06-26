@@ -1,0 +1,99 @@
+@import "../../variables.scss";
+
+.benefits {
+    position: relative;
+
+    &__i {
+        position: absolute;
+        left: 17%;
+        font-family: 'Poppins', sans-serif;
+        -webkit-text-stroke: 1px rgba(214, 214, 214, 0.5);
+        letter-spacing: 1px;
+        line-height: 144px;
+        font-weight: 900;
+        font-size: 144px;
+        text-transform: uppercase;
+        color: transparent;
+        user-select: none;
+    }
+
+    &__company {
+        display: flex;
+        align-content: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        top: 60px;
+        z-index: 1;
+        color: $juicy-green;
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+
+        & span {
+            padding-left: 10px;
+            text-transform: uppercase;
+            line-height: 40px;
+        }
+
+        .fa-braille {
+            font-size: 40px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        top: 32px;
+        padding: 20px 0;
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__grid {
+        margin-top: 0px;
+        padding: 70px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__grid-item {
+        width: 370px;
+        height: 262px;
+        padding: 20px;
+        margin-bottom: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #fff;
+        transition: transform 0.3s ease-in;
+        -webkit-transition: transform 0.3s ease-in, perspective 0.3s ease-in;
+        box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #57b33e;
+        // background: linear-gradient(to top, #57b33e, white 60%);
+
+
+        &:hover {
+            transform: perspective(600) scale(1.1);
+            -webkit-transform: perspective(600) scale(1.1);
+        }
+    }
+
+    &__grid-icon {
+        width: 70px;
+        height: 70px;
+        fill: $juicy-orange;
+    }
+
+    &__grid-item:hover &__grid-icon {
+        fill: $juicy-green;
+    }
+
+    &__grid-text {
+        text-align: center;
+    }
+
+
+}
