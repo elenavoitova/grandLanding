@@ -1,0 +1,129 @@
+@import "../../variables.scss";
+
+.complex-systems-card {
+
+&__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 340px;
+    box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: all 0.5s easy;
+    -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s easy;
+     -o-transition: all 0.5s easy;
+    filter: contrast(100%) hue-rotate(0deg);
+
+    &:hover {
+        filter: contrast(100%) hue-rotate(90deg);
+        box-shadow: 9px 9px 12px 0px rgba(0, 0, 0, 0.4);
+    }
+}
+
+&__header {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+
+   img {
+    margin-left: -17px;
+    height: 105%;
+    width: auto;
+   }
+}
+
+&__price-badge {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: $juicy-orange;
+    color: white;
+    text-indent: 10px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+&__power-badge {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 100px;
+    height: 75px;
+    padding: 3px;
+    background-color: white;
+    color: $juicy-orange;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    line-height: 65px;
+    text-indent: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+&__body {
+    padding: 10px;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+    .complex-systems-card {
+
+        &__content {
+            margin-bottom: 0;
+
+            &:not(:first-child):not(:last-child){
+               margin-top: 50px;
+               margin-bottom: 50px;
+            }
+        }
+
+        &__price-badge {
+            font-size: 16px;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (min-width: 768px) {
+
+}
+
+@media only screen and (max-width: 767px){
+    .complex-systems-card {
+
+         &__content {
+             width: 300px;
+            //  margin-bottom: 50px;
+         }
+
+        &__power-badge {
+            height: 70px;
+            background-color: #20242ca6;
+        }
+
+        &__body {
+            font-size: 14px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .complex-systems-card {
+
+        &__content {
+            width: 300px;
+            margin-bottom: 50px;
+        }
+
+        &__power-badge {
+            height: 70px;
+        }
+
+        &__body {
+            font-size: 16px;
+        }
+    }
+}

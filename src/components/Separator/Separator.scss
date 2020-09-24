@@ -59,3 +59,12 @@
   }
 
 }
+
+.separator:hover .fa-plug {
+  animation: plug 3s ease infinite;
+}
+
+@keyframes plug {
+  50% { top: 0px; left: 0px; }
+  90% { top: 5px; left: 5px; }
+}

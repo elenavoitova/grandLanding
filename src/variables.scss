@@ -5,6 +5,10 @@ $dark-bg: #20242c;
 
 $juicy-orange: #ff7029;
 $juicy-green: #57b33e;
+$neon-green: #28ff00;
+$neon-orange: #fa5a03;
+
+$breakpoint-tablet: 768px;
 
 @mixin flex-left {
     display: flex;
@@ -16,4 +20,8 @@ $juicy-green: #57b33e;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
+}
+
+@mixin shadow {
+    box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);
+}

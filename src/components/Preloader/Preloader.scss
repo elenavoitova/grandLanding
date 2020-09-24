@@ -1,0 +1,163 @@
+@import "../../variables.scss";
+
+.preloader {
+    position: absolute;
+    z-index: 99999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: $dark-bg;
+    opacity: 1;
+    animation: dis 2.5s ease 1;
+
+    &__content-container {
+        width: 300px;
+        height: 400px;
+        position: relative;
+    }
+
+    &__green-layer {
+        position: absolute;
+        width: 304px;
+        height: 404px;
+        top: -2px;
+        left: -2px;
+        background: linear-gradient(235deg, $neon-green, #060c21, $neon-orange);
+        z-index: 3;
+    }
+
+    &__orange-layer {
+        position: absolute;
+        width: 304px;
+        height: 404px;
+        top: -2px;
+        left: -2px;
+        background: linear-gradient(235deg, $neon-green, #060c21, $neon-orange);
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        animation: pulse 1.3s ease infinite alternate-reverse;
+        z-index: 4;
+    }
+
+    &__main {
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: $dark-bg;
+        z-index: 5;
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        line-height: 370px;
+
+        // div {
+        //     display: inline-block;
+        //     // transform: rotateY(90deg);
+        //     opacity: 1;
+        //     // animation: rotate-text 2.5s ease 1;
+        // }
+
+        div:nth-of-type(2){
+            animation-delay: .05s;
+        }
+        div:nth-of-type(3){
+            animation-delay: .1s;
+        }
+        div:nth-of-type(4){
+            animation-delay: .15s;
+        }
+        div:nth-of-type(5){
+            animation-delay: .2s;
+        }
+        div:nth-of-type(6){
+            animation-delay: .25s;
+        }
+        div:nth-of-type(7){
+            animation-delay: .3s;
+        }
+        div:nth-of-type(8){
+            animation-delay: .35s;
+        }
+        div:nth-of-type(9){
+            animation-delay: .4s;
+        }
+        div:nth-of-type(10){
+            animation-delay: .45s;
+        }
+        div:nth-of-type(11){
+            animation-delay: .5s;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .preloader {
+        
+            &__content-container {
+                width: 250px;
+                height: 350px;
+                position: relative;
+            }
+        
+            &__green-layer {
+                width: 254px;
+                height: 354px;
+            }
+        
+            &__orange-layer {
+                width: 254px;
+                height: 354px;
+            }
+        
+            &__main {
+                width: 250px;
+                height: 350px;
+                font-size: 29px;
+                line-height: 320px;
+            }
+        }
+    }
+
+    @keyframes rotate-text {
+        0% {
+            transform: rotateY(90deg);
+            // opacity: 0;
+        }
+        100% {
+            // opacity: 1;
+            transform: rotateY(0deg);
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            filter: blur(20px);
+            -webkit-filter: blur(20px);
+        }
+        100% {
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        }
+    }
+
+    @keyframes dis {
+        0% {
+            height: 100vh;
+            margin-top: 0;
+        }
+
+        80% {
+            height: 100vh;
+            margin-top: 0;
+        }
+
+        100% {
+            height: 0;
+            margin-top: 50vh;
+        }
+    }
+}

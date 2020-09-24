@@ -12,12 +12,12 @@ function CallUs() {
           <div className="call-us__icon">
           <span className="outer">
           <div className="inner">
-            <FontAwesomeIcon icon={faPhoneVolume}/>
+          <a href="tel:0674686836"><FontAwesomeIcon icon={faPhoneVolume}/></a>
           </div>
         </span>
           </div>
           <div className="call-us__info">
-            <h4 className="call-us__info-main">У вас є запитання? Зателефонуйте нам <span>+38 (067) 468-68-36</span></h4>
+            <h4 className="call-us__info-main">У вас є запитання? Зателефонуйте нам <a href="tel:0674686836">+38 (067) 468-68-36</a></h4>
             <div className="call-us__info-additional">Ви отримаєте безкоштовну професійну консультацію у сфері сонячної енергетики</div>
           </div>
         </div>

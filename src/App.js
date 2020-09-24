@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Homepage from './pages/Homepage';
+import Preloader from './components/Preloader/Preloader';
 
 function App() {
   return (
@@ -10,6 +11,10 @@ function App() {
           <Route exact
             path="/"
             component={() => <Homepage />}
+          />
+          <Route exact
+            path="/pre"
+            component={() => <Preloader />}
           />
           {/* <Route 
           path="/404"

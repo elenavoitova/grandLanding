@@ -1,23 +1,21 @@
 import React from "react";
 import "./AboutUs.scss";
 import { Tabs, TabsItem } from "../Tabs/Tabs";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBraille } from "@fortawesome/fontawesome-free-solid";
+import Logo from "../Logo/Logo";
 
 function AboutUs() {
   return (
-    // <div className="about-us-wrap" style={{backgroundImage: "url(./img/3416667.jpg)", backgroundAttachment: "fixed", width: "100%", padding: "50px 0"}}>
     <section className="about-us">
       <div className="container">
+        <div className="about-us__header">
+          <span className="about-us__i">About</span>
+          <Logo />
+          <h2 className="about-us__title">
+            Ми націлені на результат і тривалу співпрацю
+          </h2>
+        </div>
         <div className="about-us__content">
           <div className="about-us__col">
-            <div className="about-us__header">
-              <span className="about-us__i">About</span>
-              <div className="about-us__company"><FontAwesomeIcon icon={faBraille}/><span>Grand Overon</span></div>
-              <h2 className="about-us__title">
-                Ми націлені на результат і тривалу співпрацю
-              </h2>
-            </div>
             <Tabs>
               <TabsItem label="Our Mission">
                 <div className="tabs-item-description">
@@ -68,7 +66,7 @@ function AboutUs() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </section>
     // </div>
   );

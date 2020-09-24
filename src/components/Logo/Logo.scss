@@ -1,0 +1,88 @@
+@import "../../variables.scss";
+
+.logo {
+    display: flex;
+    align-content: center;
+    position: relative;
+    z-index: 1;
+    color: $juicy-green;
+
+    & span {
+        padding-left: 10px;
+        text-transform: uppercase;
+        line-height: 40px;
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    & strong {
+        padding-right: 1px;
+    }
+
+    .fa-braille {
+        font-size: 40px;
+    }
+}
+
+strong {
+    animation: logoAnimation 8s ease-in-out infinite;
+}
+
+@keyframes logoAnimation {
+    0% {
+        color: rgb(126, 218, 130);
+    }
+
+    2% {
+        color: $juicy-green;
+    }
+}
+
+.delay1 {
+    animation-delay: 0s;
+}
+
+.delay2 {
+    animation-delay: 0.04375s;
+
+}
+
+.delay3 {
+    animation-delay: 0.0875s;
+}
+
+.delay4 {
+    animation-delay: 0.13125s;
+}
+
+.delay5 {
+    animation-delay: 0.175s;
+}
+
+.delay6 {
+    animation-delay: 0.21875s;
+}
+
+.delay7 {
+    animation-delay: 0.2625s;
+}
+
+.delay8 {
+    animation-delay: 0.30625s;
+}
+
+.delay9 {
+    animation-delay: 0.35s;
+}
+
+.delay10 {
+    animation-delay: 0.40s;
+}
+
+.delay11 {
+    animation-delay: 0.45s;
+}
+
+.delay12 {
+    animation-delay: 0.5s;
+}

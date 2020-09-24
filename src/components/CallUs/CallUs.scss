@@ -5,13 +5,14 @@
     margin-bottom: 100px;
 
     &__wrap {
+        width: unset;
         position: relative;
         height: 200px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: $light-bg;
-        box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);;
+        box-shadow: 9px 12px 38px 0px rgba(0, 0, 0, 0.1);
     }
 
     .call-us__icon {
@@ -22,12 +23,12 @@
         background-color: #fff;
 
 
-        svg {
+        .fa-phone-volume {
             position: absolute;
             top: 15px;
             left: 22px;
             transform: rotate(-45deg);
-            color: $juicy-green;
+            color: #fff;
             font-size: 40px;
         }
 
@@ -38,7 +39,6 @@
             margin-top: -40px;
             margin-left: -25px;
             border-radius: 100%;
-            box-shadow: 0px 3px 12px 0px $juicy-green;
             background: #fff;
         }
           
@@ -49,27 +49,8 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-              inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+            background: $juicy-green;
         }
-
-
-    }
-
-    &__wrap:hover .call-us__icon{
-        .outer {
-            box-shadow: 0px 3px 12px 0px $juicy-orange;
-            background: #fff;
-        }
-
-        svg {
-            color: $juicy-orange;
-            font-size: 40px;
-        }
-    }
-
-    &__wrap:hover .call-us__info-main > span {
-            font-weight: bolder;
     }
 
     &__img {
@@ -89,15 +70,95 @@
         font-weight: 600;
         font-size: 23px;
 
-        & span {
-            // font-size: 26px;
+        & a {
             color: $juicy-orange;
         }
     }
 
     &__info-additional {
-        font-size: 16px;
         line-height: 40px;
         font-weight: 200;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .call-us {
+        margin-bottom: 50px;
+    
+        &__wrap {
+            margin: 0 auto;
+            width: 95%;
+            height: 130px;
+            padding: 3px;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0px 0 38px 0px rgba(0, 0, 0, 0.5);
+            background-image: linear-gradient(to bottom, $neon-orange, #fff 25%);
+        }
+    
+        .call-us__icon {
+            position: absolute;
+            top: 50%;
+            left: 0px;
+    
+            .fa-phone-volume {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                font-size: 30px;
+                -webkit-animation: ring 5s infinite ease-in-out;
+                animation: ring 5s infinite ease-in-out;
+            }
+    
+            .outer {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                margin-top: -33px;
+                margin-left: -25px;
+                border-radius: 100%;
+                background: #fff;
+            }
+              
+            .inner {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: $juicy-green;
+            }
+        }
+    
+        &__img {
+            // width: unset;
+            background-position-y: -120px;
+            height: 65px;
+            width: 100%;
+        }
+    
+        &__info {
+            flex-grow: 1;
+            margin-left: 30px;
+            text-align: center;
+            padding: 10px 0;
+        }
+    
+        &__info-main {
+            font-weight: 300;
+            font-size: 16px;
+    
+            & a {
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+    
+        &__info-additional {
+            display: none;
+            line-height: 40px;
+            font-weight: 200;
+        }
     }
 }

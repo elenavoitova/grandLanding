@@ -1,64 +1,156 @@
 @import "../../variables.scss";
 
-@mixin volume-text {
-    text-shadow: 0 1px 0 #ccc,
-                0 2px 0 #c9c9c9,
-                0 3px 0 #bbb, 
-                // 0 4px 0 #b9b9b9, 
-                // 0 5px 0 #aaa, 
-                0 6px 1px rgba(0,0,0,.1), 
-                0 0 5px rgba(0,0,0,.1), 
-                0 1px 3px rgba(0,0,0,.3), 
-                0 3px 5px rgba(0,0,0,.2), 
-                0 5px 10px rgba(0,0,0,.25), 
-                0 10px 10px rgba(0,0,0,.2), 
-                0 20px 20px rgba(0,0,0,.15);
-}
-
-.main-banner {
-    height: 600px;
+.banner {
+    height: 100vh;
     position: relative;
-    // background-position-y: 0, 0; //for @media use size: cover with position 0
-    background-repeat: no-repeat;
-    background-size: auto, cover;
     overflow: hidden;
 
-    &__info {
-        color: #fff;
-        font-size: 100px;
-        font-weight: 900;
-        // font-style: italic;
-        line-height: 130px;
-        user-select: none;
-        text-align: center;
-        text-shadow: 1px 1px 2px grey;
-        @include volume-text();
+    &__dark-layer {
+        width: 53%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 47%;
+        background-color: $dark-bg;
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: auto 80%;
+        clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
 
-    &__details {
+    &__info {
+        position: absolute;
         color: #fff;
-        font-size: 22px;
-        // font-style: italic;
-        user-select: none;
-        text-align: center;
-        text-shadow: 1px 1px 2px grey;
+        width: fit-content;
+        text-align: end;
+        background-color: $dark-bg;
+        z-index: 10;
+    }
+
+    &__info--main {
+        top: 40vh;
+        right: 8vw;
+        font-size: 34px;
+        text-shadow: 5px 5px 3px #000;
+    }
+
+    &__info--details {
+        bottom: 2vh;
+        right: 50px;
+        font-size: 21px;
     }
 
     &__action {
-        position: absolute;
-        bottom: 150px;
-        left: 40%;
-        padding: 10px 10px;
+        position: relative;
+        width: 250px;
+        height: 50px;
         color: #fff;
         font-size: 15px;
-        background-color: $juicy-green;
-        border: none;
-        box-shadow:  3px 3px 16px 0px rgba(0, 0, 0, 1);
+        border: 2px solid #fff;
+        transform: skewX(-15deg);
+        // border: none;
+        // box-shadow:  3px 3px 16px 0px rgba(0, 0, 0, 1);
         outline-style: none;
+        background: transparent;
         cursor: pointer;
 
-        &:hover {
-            background-color: $juicy-orange;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 0px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid $juicy-orange;
+            -webkit-transition: width 0.3s ease-out 0.3s;
+            -moz-transition: width .3s ease-out 0.3s;
+            -o-transition: width .3s ease-out 0.3s;
+            transition: width .3s ease-out 0.3s;
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -15px;
+            border: 2px solid $juicy-orange;
+            width: 0px;
+            height: 50px;
+        }
+
+    }
+
+    &__action:hover::before {
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .banner {
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        // animation: banner_animate 20s infinite ease-in-out alternate;
+
+    
+        &__dark-layer {
+            display: none;
+        }
+    
+        &__info {
+            text-align: center;
+        }
+    
+        &__info--main {
+            width: 100%;
+            height: 150px;
+            top: 330px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            text-shadow: 2px 2px 3px #000000;
+            line-height: 16px;
+            color: #efeaea;
+            background-image: linear-gradient(45deg, $juicy-green, #016b01);
+    
+            & span {
+                font-size: 25px;
+            }
+        }
+    
+        &__info--details {
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            font-size: 12px;
+            background-color: $juicy-green;
+            padding: 5px 0 10px;
+            border-top: 5px solid $dark-bg;
+            color: #000;
+            font-weight: 600;
+        }
+    }
+}
+
+@keyframes banner_animate {
+    0% {
+        background-position: 40%;
+    }
+
+    30% {
+        background-position: 55%;
+    }
+
+    70% {
+        background-position: 55%;
+    }
+
+    100% {
+        background-position: 55%;
     }
 }

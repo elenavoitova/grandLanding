@@ -1,22 +1,18 @@
 import React from "react";
 import "../SolarBenefits/SolarBenefits.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBraille } from "@fortawesome/fontawesome-free-solid";
+import Logo from "../Logo/Logo";
 
 function SolarBenefits() {
   
 
   return(
-    <div className="benefits" 
-    // style={{backgroundImage: "url(./img/abstract-green-wavy-lines-colorful-600w-391536226.jpg"}}
-    >
+    <div className="benefits">
       <div className="container">
         <span className="benefits__i">advantage</span>
-        <div className="benefits__company"><FontAwesomeIcon icon={faBraille}/><span>Grand Overon</span></div>
+        <Logo style={{width: "fit-content", margin: "0 auto", top: "60px"}}/>
         <h2 className="benefits__title">Переваги сонячної електростанції</h2>
         <div className="benefits__grid">
-              <div 
-            className="benefits__grid-item">
+              <div className="benefits__grid-item">
            <img className="benefits__grid-icon" src="./img/solar-energy.png" alt="solar-energy"/>
             <h3 className="benefits__grid-title">Независимость</h3>
             <p className="benefits__grid-text">Солнце – это бесконечный источник бесплатной энергии</p>

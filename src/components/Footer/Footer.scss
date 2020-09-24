@@ -1,30 +1,31 @@
 @import "../../variables.scss";
 
 .footer {
-    // height: 400px;
     padding-top: 50px;
     padding-bottom: 50px;
-    background: linear-gradient(180deg, $dark-bg 95%, $juicy-green 100%);
+    background-color: $dark-bg;
 
     &__content {
-        // width: 1170px;
-        // margin: 0 auto;
+        position: relative;
         display: flex;
         justify-content: space-between;
+        padding: 0 25px 0 0;
     }
 
     &__company {
         width: 30%;
         color: #fff;
         text-align: justify;
+        background-color: $dark-bg;
 
         &-logo {
-            width: 200px;
+            width: 100px;
         }
 
         &-fb {
             font-size: 30px;
             color: $juicy-green;
+            filter: drop-shadow(0px 2px 3px #000);
 
             &:hover {
                 color: $juicy-orange;
@@ -34,7 +35,7 @@
 
 
     &__contacts {
-        width: 30%;
+        width: 35%;
         height: 300px;
         color: #fff;
     }
@@ -46,12 +47,7 @@
             font-size: 25px;
             margin-right: 20px;
             color: $juicy-green;
-            transition: color 1s;
-        }
-
-        span {
-            font-style: normal;
-            font-size: 16px;
+            transition: color 0.1s;
         }
     }
 
@@ -65,7 +61,32 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
+
+        & + span {
+            font-size: 12px;
+        }
     }
+
+    .schedule-indicator--open {
+        box-shadow: 0 0 5px $neon-green;
+        background-color: $juicy-green;
+
+        & + span {
+            color: $juicy-green;
+            text-shadow: 0 0 5px $neon-green;
+        }
+    }
+
+    .schedule-indicator--close {
+        box-shadow: 0 0 5px $neon-orange;
+        background-color: $juicy-orange;
+
+        & + span {
+            color: $juicy-orange;
+            text-shadow: 0 0 5px $neon-orange;
+        }
+    }
+
 
     &__address {
         margin-bottom: 20px;
@@ -74,11 +95,10 @@
             margin-left: 3px;
             margin-right: 20px;
             color: $juicy-green;
-            transition: color 1s;
+            transition: color 0.1s;
         }
 
         a {
-            text-decoration-color: $juicy-green;
             text-decoration-line: underline;
             font-size: 14px; 
             padding-left: 10px;
@@ -86,7 +106,7 @@
 
         span {
             font-style: normal;
-            font-size: 16px;
+            // font-size: 16px;
         }
     }
 
@@ -100,12 +120,12 @@
             font-size: 25px;
             margin-right: 20px;
             color: $juicy-green;
-            transition: color 1s;
+            transition: color 0.1s;
         }
 
         a {
             font-style: normal;
-            font-size: 18px;
+            // font-size: 18px;
             font-weight: bolder;
         }
     }
@@ -115,7 +135,7 @@
     }
 
     &__phone {
-        margin-bottom: 20px;
+        margin: 0 0 20px 0;
         display: flex;
         align-items: center;
 
@@ -125,17 +145,139 @@
             margin-left: 4px;
             margin-right: 21px;
             color: $juicy-green;
-            transition: color 1s;
+            transition: color 0.1s;
         }
 
         a {
             font-style: normal;
-            font-size: 18px;
+            // font-size: 18px;
             font-weight: bolder;
         }
     }
 
     &__phone:hover .fa-phone-volume{
         color: $juicy-orange;
+    }
+
+    &__links {
+        width: auto;
+        height: 75px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: transparent;
+
+        a {
+            width: fit-content;
+            text-decoration: underline;
+            transition: color 0.3s;
+            background: $dark-bg;
+        }
+
+        a:hover {
+            color: $juicy-orange
+        }
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .footer {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+        }
+    
+        &__company {
+            width: 100%;
+            margin-bottom: 30px;
+
+            &-about {
+                display: flex;
+                align-items: center;
+
+            }
+    
+            &-logo {
+                float: left;
+                width: 100px;
+                height: auto;
+                margin-right: 15px;
+            }
+    
+            &-fb {
+                font-size: 30px;
+            }
+        }
+    
+    
+        &__contacts {
+            width: 100%;
+            height: auto;
+            color: #fff;
+        }
+    
+        &__schedule {
+            margin-bottom: 15px;
+    
+            .fa-clock {
+                font-size: 18px;
+            }
+        }
+    
+    
+        &__address {
+            margin-bottom: 5px;
+            .fa-map-marker-alt {
+                font-size: 14px;
+            }
+    
+            a {
+                font-size: 12px; 
+            }
+        }
+    
+        &__address:hover .fa-map-marker-alt{
+            color: initial;
+        }
+    
+        &__email {
+            margin-bottom: 15px;
+            .fa-envelope {
+                font-size: 16px;
+            }
+        }
+
+        &__email:hover .fa-envelope{
+            color: $juicy-green;
+        }
+    
+        &__phone {
+            margin: 15px 0 0 0;
+            .fa-phone-volume{
+                font-size: 18px;
+            }
+    
+            a {
+                line-height: 30px;
+                letter-spacing: 1px;
+            }
+        }
+    
+        &__phone:hover .fa-phone-volume{
+            color: $juicy-green;
+        }
+    
+        &__links {
+            width: 100%;
+            height: auto;
+            margin: 30px 0;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     }
 }

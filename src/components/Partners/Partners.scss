@@ -1,0 +1,31 @@
+@import "../../variables.scss";
+
+.patners {
+
+    &__container {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        background: $dark-bg;
+    }
+
+    &__content {
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    &__items {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+
+        & img {
+            width: 12%;
+            height: auto;
+        }
+    }
+}

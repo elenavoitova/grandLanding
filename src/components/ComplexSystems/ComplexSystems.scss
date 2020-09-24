@@ -1,1 +1,120 @@
 @import "../../variables.scss";
+
+.complex-systems {
+    margin-bottom: 100px;
+
+    &__header {
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    &__i {
+        position: absolute;
+        top: -45px;
+        left: 20%;
+        font-family: 'Poppins', sans-serif;
+        -webkit-text-stroke: 1px rgba(214, 214, 214, 0.5);
+        letter-spacing: 1px;
+        line-height: 144px;
+        font-weight: 900;
+        font-size: 144px;
+        text-transform: uppercase;
+        color: transparent;
+        filter: drop-shadow(3px 3px 7px #4d4b4bd2);
+        user-select: none;
+    }
+
+    & .logo {
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        top: 5px;
+    }
+
+    &__title {
+        padding: 10px 0 20px;
+        position: relative;
+        z-index: 1;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .complex-systems {
+        &__cards {
+            justify-content: space-evenly;
+        }
+
+        &__subinfo {
+            margin-top: -50px;
+            text-align: justify;
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px){
+    .complex-systems {
+        &__i {
+            left: calc(50% - 235px);
+            font-weight: 600;
+            font-size: 100px;
+        }
+
+        &__title {
+            padding: 20px 0 0 0px;
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .complex-systems {
+        margin-bottom: 50px;
+
+        & .container {
+            width: 100vw;
+        }
+
+        &__header {
+            padding-bottom: 30px;
+        }
+
+        &__i {
+            left: calc(50% - 165px);
+            font-weight: 600;
+            font-size: 70px;
+            // line-height: 105px;
+        }
+
+        &__title {
+            padding: 20px 0 0 0;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        &__cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__subinfo {
+            padding: 0 15px;
+            text-align: justify;
+            font-size: 14px;
+        }
+    }
+}
