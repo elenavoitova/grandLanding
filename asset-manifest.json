@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/grandLanding/static/css/main.9dca44c4.chunk.css",
-    "main.js": "/grandLanding/static/js/main.4bedf145.chunk.js",
-    "main.js.map": "/grandLanding/static/js/main.4bedf145.chunk.js.map",
+    "main.css": "/grandLanding/static/css/main.662e8ec1.chunk.css",
+    "main.js": "/grandLanding/static/js/main.e3833e15.chunk.js",
+    "main.js.map": "/grandLanding/static/js/main.e3833e15.chunk.js.map",
     "runtime-main.js": "/grandLanding/static/js/runtime-main.21035fbb.js",
     "runtime-main.js.map": "/grandLanding/static/js/runtime-main.21035fbb.js.map",
     "static/js/2.96973b81.chunk.js": "/grandLanding/static/js/2.96973b81.chunk.js",
     "static/js/2.96973b81.chunk.js.map": "/grandLanding/static/js/2.96973b81.chunk.js.map",
     "index.html": "/grandLanding/index.html",
-    "precache-manifest.ed92c35c6012a90eb6d71bfe73bffb69.js": "/grandLanding/precache-manifest.ed92c35c6012a90eb6d71bfe73bffb69.js",
+    "precache-manifest.ecfc25c5a949a543ab108fe048178b13.js": "/grandLanding/precache-manifest.ecfc25c5a949a543ab108fe048178b13.js",
     "service-worker.js": "/grandLanding/service-worker.js",
-    "static/css/main.9dca44c4.chunk.css.map": "/grandLanding/static/css/main.9dca44c4.chunk.css.map",
+    "static/css/main.662e8ec1.chunk.css.map": "/grandLanding/static/css/main.662e8ec1.chunk.css.map",
     "static/js/2.96973b81.chunk.js.LICENSE.txt": "/grandLanding/static/js/2.96973b81.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.21035fbb.js",
     "static/js/2.96973b81.chunk.js",
-    "static/css/main.9dca44c4.chunk.css",
-    "static/js/main.4bedf145.chunk.js"
+    "static/css/main.662e8ec1.chunk.css",
+    "static/js/main.e3833e15.chunk.js"
   ]
 }
