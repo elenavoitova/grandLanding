@@ -20,7 +20,7 @@
         font-size: 144px;
         text-transform: uppercase;
         color: transparent;
-        filter: drop-shadow(3px 3px 7px #4d4b4bd2);
+        filter: drop-shadow(3px 3px 7px #908f8f);
         user-select: none;
     }
 
@@ -50,15 +50,20 @@
     }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .complex-systems {
+        &__subinfo {
+            margin-top: -50px;
+            text-align: justify;
+            font-size: 16px;
+        }
+    }
+}
+
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
     .complex-systems {
         &__cards {
             justify-content: space-evenly;
-        }
-
-        &__subinfo {
-            margin-top: -50px;
-            text-align: justify;
         }
     }
 }
@@ -73,9 +78,9 @@
 
         &__title {
             padding: 20px 0 0 0px;
-            font-size: 34px;
+            font-size: 30px;
             font-weight: 400;
-            line-height: 40px;
+            line-height: 33px;
         }
     }
 }
@@ -96,7 +101,6 @@
             left: calc(50% - 165px);
             font-weight: 600;
             font-size: 70px;
-            // line-height: 105px;
         }
 
         &__title {

@@ -2,8 +2,58 @@
 
 .footer {
     padding-top: 50px;
-    padding-bottom: 50px;
     background-color: $dark-bg;
+
+    .shop-link {
+        margin: 0 10px;
+        position: relative;
+
+        &:hover:after {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+        }
+            
+        &:hover:before    {
+                opacity: 0;
+                transform: translateY(50%) rotateX(90deg);
+        }
+
+        &:after {
+            content: attr(data-title);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 220px;
+            height: 40px;
+            color: #323237;
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            transition: 0.5s;
+            background: $juicy-green;
+            box-shadow: 1px 1px 1px $juicy-green;
+            transform: translateY(-50%) rotateX(90deg);
+            }
+            
+        &:before {
+            position: relative;
+            content: attr(data-title);
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 40px;
+            opacity: 1;
+            display: block;
+            line-height: 40px;
+            text-align: center;
+            transition: 0.5s;
+            background: transparent;
+            border: 2px solid $juicy-green;
+            box-shadow: 1px 1px 1px $juicy-green;
+            transform: translateY(0) rotateX(0);
+        }
+    }
 
     &__content {
         position: relative;
@@ -15,20 +65,35 @@
     &__company {
         width: 30%;
         color: #fff;
-        text-align: justify;
+        text-align: left;
+        letter-spacing: 1.5px;
         background-color: $dark-bg;
+
+        &-about {
+            padding-bottom: 20px;
+        }
 
         &-logo {
             width: 100px;
         }
 
+        &-links {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
         &-fb {
-            font-size: 30px;
-            color: $juicy-green;
-            filter: drop-shadow(0px 2px 3px #000);
+            font-size: 23px;
+            color: #fff;
+            border: 2px solid $juicy-green;
+            padding: 0 8px;
+            box-shadow: 1px 1px 1px $neon-green;
+            // filter: drop-shadow(0px 2px 3px #000);
 
             &:hover {
-                color: $juicy-orange;
+                color: $juicy-green;
+                box-shadow: unset;
             }
         }
     }
@@ -86,7 +151,6 @@
             text-shadow: 0 0 5px $neon-orange;
         }
     }
-
 
     &__address {
         margin-bottom: 20px;
@@ -160,36 +224,49 @@
     }
 
     &__links {
-        width: auto;
+        width: 20%;
         height: 75px;
+        padding-left: 20px;
         color: #fff;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: transparent;
 
         a {
             width: fit-content;
             text-decoration: underline;
-            transition: color 0.3s;
-            background: $dark-bg;
+            transition: all 0.3s;
         }
 
         a:hover {
-            color: $juicy-orange
+            color: $juicy-orange;
+            text-indent: 15px;
         }
+    }
+
+    &__copyrights {
+        height: 50px;
+        padding-right: 2vw;
+        line-height: 50px;
+        border-top: 2px solid #282c33;
+        color: rgb(202, 202, 202);
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-align: end;
+        background-color: #191d23;;
     }
 }
 
-@media only screen and (max-width: 450px){
+@media only screen and (max-width: 992px){
     .footer {
         padding-top: 30px;
-        padding-bottom: 20px;
+        font-size: 18px;
+
         &__content {
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 0;
+            padding: 20px 50px;
         }
     
         &__company {
@@ -199,18 +276,17 @@
             &-about {
                 display: flex;
                 align-items: center;
-
             }
     
             &-logo {
                 float: left;
-                width: 100px;
+                width: 150px;
                 height: auto;
-                margin-right: 15px;
+                margin-right: 25px;
             }
     
             &-fb {
-                font-size: 30px;
+                // font-size: 45px;
             }
         }
     
@@ -222,16 +298,20 @@
         }
     
         &__schedule {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
     
             .fa-clock {
                 font-size: 18px;
             }
         }
+
+        &__schedule:hover .fa-clock{
+            color: $juicy-green;
+        }
     
     
         &__address {
-            margin-bottom: 5px;
+            margin-bottom: 25px;
             .fa-map-marker-alt {
                 font-size: 14px;
             }
@@ -242,11 +322,11 @@
         }
     
         &__address:hover .fa-map-marker-alt{
-            color: initial;
+            color: $juicy-green;
         }
     
         &__email {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             .fa-envelope {
                 font-size: 16px;
             }
@@ -275,9 +355,57 @@
         &__links {
             width: 100%;
             height: auto;
-            margin: 30px 0;
+            padding-left: unset;
+            margin: 50px 0 30px;
             flex-direction: row;
             justify-content: space-evenly;
+
+            & a:hover {
+                text-indent: unset;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .footer {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .footer {
+        font-size: initial;
+        &__content {
+            padding: 0;
+        }
+    
+        &__company {
+    
+            &-logo {
+                width: 100px;
+            }
+        }
+    
+        &__schedule {
+            margin-bottom: 15px;
+        }
+    
+    
+        &__address {
+            margin-bottom: 15px;
+        }
+    
+        &__email {
+            margin-bottom: 15px;
+        }
+    
+        &__phone {
+            margin: 15px 0 0 0;
+        }
+    
+        &__links {
+            margin: 30px 0;
         }
     }
 }

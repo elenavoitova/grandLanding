@@ -11,8 +11,13 @@ import ComplexSystems from "../components/ComplexSystems/ComplexSystems";
 import Preloader from "../components/Preloader/Preloader";
 import Partners from "../components/Partners/Partners";
 
+import uaTranslation from '../translations/ukr.json';
+import ruTranslation from '../translations/ru.json';
+
 function Homepage() {
   const [locked, setLocked] = useState(true);
+  const [lang, setLang] = useState('ukr');
+  const [translations, setTranslations] = useState(uaTranslation);
 
   useEffect(() => {
       document.querySelector("#root").classList.add('lock');
@@ -22,23 +27,31 @@ function Homepage() {
     }, 2500);
   }, [setLocked]);
 
+  useEffect(() => {
+    lang === 'ukr' ? setTranslations(uaTranslation) : setTranslations(ruTranslation);
+  }, [lang, translations]);
   return (
     <>
     {
       locked && <Preloader/>
     }
-      <TopBar />
-      <Banner />
+      <TopBar 
+        translations={translations.header}
+        lang={lang}
+        onSetUkr= {() => {setLang('ukr')}}
+        onSetRus= {() => {setLang('ru')}}
+      />
+      <Banner translations={translations.banner}/>
       <main>
-        <CompanyBasics />
-        <AboutUs />
-        <CallUs />
-        <SolarBenefits />
-        <ComplexSystems />
+        <CompanyBasics translations={translations.company}/>
+        <AboutUs translations={translations.about}/>
+        <CallUs translations={translations.contacts}/>
+        <SolarBenefits translations={translations.benefits}/>
+        <ComplexSystems translations={translations.systems}/>
       </main>
-      <MapBg />
-      {/* <Partners/> */}
-      <Footer />
+      <MapBg translations={translations.contact}/>
+      <Partners translations={translations.partners} />
+      <Footer translations={translations.footer}/>
       </>
   );
 }

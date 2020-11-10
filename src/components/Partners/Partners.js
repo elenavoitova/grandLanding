@@ -1,11 +1,11 @@
 import React from "react";
 import "./Partners.scss";
 
-function Partners(){
+function Partners({translations}){
   return(
     <section className="patners__container">
       <div className="patners__content">
-      <div className="patners__title">Наши партнеры:</div>
+  <div className="patners__title">{translations.title}</div>
       <div className="patners__items">
         <img src="./img/partners/1280px-ABB_logo.png" alt="ABB"/>
         <img src="./img/partners/altek_logo.png" alt="Altek"/>

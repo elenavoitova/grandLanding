@@ -3,49 +3,31 @@ import "./AboutUs.scss";
 import { Tabs, TabsItem } from "../Tabs/Tabs";
 import Logo from "../Logo/Logo";
 
-function AboutUs() {
+function AboutUs({ translations }) {
   return (
     <section className="about-us">
       <div className="container">
         <div className="about-us__header">
           <span className="about-us__i">About</span>
           <Logo />
-          <h2 className="about-us__title">
-            Ми націлені на результат і тривалу співпрацю
-          </h2>
+          <h2 className="about-us__title">{translations.title}</h2>
         </div>
         <div className="about-us__content">
           <div className="about-us__col">
             <Tabs>
-              <TabsItem label="Our Mission">
+              <TabsItem label={translations.missionTitle}>
                 <div className="tabs-item-description">
-                  Компания Гранд Оверон – это команда инженеров и
-                  профессиональных монтажников, которые более 10 лет работают в
-                  сфере возобновляемой энергетики и энергосберегающих
-                  технологий. За это время нами реализовано более сотни проектов
-                  по проектированию, строительству и подключению солнечных
-                  электростанций различной мощности для работы по зеленому
-                  тарифу.
+                  {translations.mission}
                 </div>
               </TabsItem>
-              <TabsItem label="Our Vision">
+              <TabsItem label={translations.visionTitle}>
                 <div className="tabs-item-description">
-                  В своей работе компания Гранд Оверон использует передовые
-                  технологии и инновационное оборудование, что позволяет нам
-                  предложить нашим заказчикам решения, имеющие оптимальное
-                  соотношение инвестиции/эффективность. Мы предлагаем не просто
-                  установить солнечную электростанцию, мы готовы комплексно
-                  подойти к решению проблемы повышения энергоэффективности
-                  Вашего дома!
+                  {translations.vision}
                 </div>
               </TabsItem>
-              <TabsItem label="Philosophy">
+              <TabsItem label={translations.philosophyTitle}>
                 <div className="tabs-item-description">
-                  Солнечная энергия – это неиссякаемый источник энергии, который
-                  с помощью наших специалистов будет работать на вас. Инвестируя
-                  в альтернативную энергетику, вы повышаете комфорт вашей жизни,
-                  минимизируете затраты на оплату энергоснабжения, внос при этом
-                  свой вклад в улучшение экологической обстановки.
+                  {translations.philosophy}
                 </div>
               </TabsItem>
             </Tabs>
@@ -55,7 +37,7 @@ function AboutUs() {
               <div className="about-us__img-container">
                 <img
                   src={
-                    "./img/stock-photo-electrician-working-on-maintenance-equipment-at-solar-power-plant-electrician-swapping-solar-688413082.jpg"
+                    "./img/688413082.jpg"
                   }
                   alt="about us"
                 />
@@ -65,6 +47,15 @@ function AboutUs() {
               </div>
             </div>
           </div>
+          <a
+            className="about-us__shop-link"
+            href="https://grand-overon.in.ua"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>{translations.link}</span>
+            <span style={{marginLeft: "3px"}}>&gt;&gt;&gt;</span>
+          </a>
         </div>
       </div>
     </section>

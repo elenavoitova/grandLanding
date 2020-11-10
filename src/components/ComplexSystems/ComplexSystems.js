@@ -4,7 +4,7 @@ import SystemsCard from "../SystemsCard/SystemsCard";
 
 import "./ComplexSystems.scss";
 
-function ComplexSystems() {
+function ComplexSystems({translations}) {
   return (
     <section className="complex-systems">
       <div className="container">
@@ -12,7 +12,7 @@ function ComplexSystems() {
           <span className="complex-systems__i">Systems</span>
           <Logo />
           <h2 className="complex-systems__title">
-            Индивидуальный подход к каждому клиенту
+            {translations.title}
           </h2>
         </div>
         <div className="complex-systems__cards">
@@ -21,27 +21,28 @@ function ComplexSystems() {
             power="10"
             generation="11 000"
             profit="1700"
-            payback="3,5 років"
+            payback="3,5"
+            translations={translations.card}
           />
           <SystemsCard
             price="7 690"
             power="20"
             generation="22 000"
             profit="3400"
-            payback="3 роки"
+            payback="3"
+            translations={translations.card}
           />
           <SystemsCard
             price="11 224"
             power="30"
             generation="33 000"
             profit="5100"
-            payback="2,5 роки"
+            payback="2,5"
+            translations={translations.card}
           />
         </div>
         <div className="complex-systems__subinfo">
-          * Точна вартість станції з установкою і підключенням залежить від
-          регіону і параметрів об'єкта. Щоб отримати повний розрахунок і
-          пропозиція "під ключ" - заповніть форму нижче
+          * {translations.remark}
         </div>
       </div>
     </section>

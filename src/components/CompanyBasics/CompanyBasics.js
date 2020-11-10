@@ -3,39 +3,37 @@ import FlipCard from "../FlipCard/FlipCard";
 
 import "./CompanyBasics.scss";
 
-function CompanyBasics() {
+function CompanyBasics({translations}) {
+
+  const today = new Date();
+  const currentYear = today.getFullYear();
+  const initYear = 2008;
   return (
     <section className="company-basics">
         <div className="company-basics__list">
           <FlipCard
             icon="guarantee"
             iconClass="icon-1"
-            title="Офіційне обладнання світових брендів"
-            description="Компания Гранд Оверон– официальный партнер ведущих производителей оборудования и комплектующих для альтернативной энергетики. Все поставляемое нами оборудование завозится исключительно по официальным (белым) каналам, что обеспечивает полное соблюдение гарантийных обязательств со стороны компаний-производителей"
+            title={translations.card1.title}
+            description={translations.card1.description}
           />
           <FlipCard
             icon="technical"
             iconClass="icon-2"
-            iconX="-30px"
-            iconY="-100px"
-            title="Гарантійне і післягарантійне обслуговування"
-            description="Проведение регулярного обслуживания, проверка и корректировка настроек, своевременное определение неисправностей – залог длительной и максимально эффективной работы. С нашей помощью, ваша станция спустя много лет будет такой же эффективной в работе, как и при запуске"
+            title={translations.card2.title}
+            description={translations.card2.description}
           />
           <FlipCard
             icon="team-management"
             iconClass="icon-3"
-            iconX="-24px"
-            iconY="-80px"
-            title="Професійна команда"
-            description="Наши инженеры и монтажники прошли обучение у ведущих производителей оборудования для альтернативной энергетики, имеют сертификаты на выполнение работ, постоянно работают над повышением собственного профессионального уровня. Команда Гранд Оверон – постоянный участник специализированных выставок и конференций, посвященных «зеленой энергетике»"
+            title={translations.card3.title}
+            description={translations.card3.description}
           />
           <FlipCard
             icon="team-1"
             iconClass="icon-4"
-            iconX="-8px"
-            iconY="-75px"
-            title="12 років на енергетичному ринку"
-            description="ТОВ Гранд Оверон здійснює свою діяльність на території України з 2008 року. За цей час компанія зарекомендувала себе, як надійний партнер на ринку відновлюваної енергетики"
+            title={`${currentYear - initYear} ${translations.card4.title}`}
+            description={translations.card4.description}
           />
           </div>
           <div className="company-basics__square"></div>

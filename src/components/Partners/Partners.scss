@@ -3,14 +3,14 @@
 .patners {
 
     &__container {
-        padding-top: 50px;
-        padding-bottom: 20px;
         background: $dark-bg;
     }
 
     &__content {
         max-width: 1170px;
         margin: 0 auto;
+        padding: 50px 0;
+        border-bottom: 3px solid #282c33;
     }
 
     &__title {
@@ -20,12 +20,71 @@
 
     &__items {
         display: flex;
+        flex-wrap: wrap;
         align-content: center;
         justify-content: space-between;
+        min-height: 100px;
 
         & img {
-            width: 12%;
-            height: auto;
+            width: auto;
+            height: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .patners {
+        &__content {
+            padding: 50px 20px;
+        }
+    
+        &__items {
+            align-content: space-between;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .patners {
+    
+        &__content {
+            padding: 20px 10px;
+        }
+    
+        &__title {
+            font-size: 16px;
+        }
+    
+        &__items {
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: space-evenly;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .patners {
+    
+        &__content {
+            padding: 20px 10px;
+        }
+    
+        &__title {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+    
+        &__items {
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: space-evenly;
+
+            & img {
+                width: auto;
+                height: 20px;
+            }
         }
     }
 }

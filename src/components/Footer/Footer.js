@@ -5,17 +5,17 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import {faEnvelope, faClock} from '@fortawesome/fontawesome-free-regular';
 import {faPhoneVolume, faMapMarkerAlt} from '@fortawesome/fontawesome-free-solid';
 
-function Footer() {
+function Footer({translations}) {
   let [isOpen, setOpen] = useState(null);
+  const today = new Date();
 
   useEffect(() => {
-    let today = new Date();
     let hours = today.getHours();
     let weekDay = today.getDay();
     if(weekDay === 6 || weekDay === 0) {
       setOpen(false);
     } else {
-      (hours >= 9 && hours<= 18) ? setOpen(true) : setOpen(false);
+      (hours >= 9 && hours< 18) ? setOpen(true) : setOpen(false);
     }
   }, []);
 
@@ -25,16 +25,19 @@ function Footer() {
         <div className="footer__content">
           <div className="footer__company">
             <div className="footer__company-about">
-            <img className="footer__company-logo" src="./img/go_logo.png" alt="logo"/>
-            <p>iRecco’s extensive range of robust and reliable products backed by its cutting-edge R&D and more than two decades of expertise are designed to performance.</p>
+              <img className="footer__company-logo" src="./img/go_logo.png" alt="logo"/>
+              {/* <p>iRecco’s extensive range of robust and reliable products backed by its cutting-edge R&D and more than two decades of expertise are designed to performance.</p> */}
+              <p>{translations.tagline}</p>
             </div>
-            <a className="footer__company-fb" href="https://www.facebook.com/grandoveron/?eid=ARC_NEv5QFX12hqKIuhUU49tXCQjU8IzHDzePJNHkj82_FBaeEBOjzRKZtBapoYuoMcbkIzpaPdrfmZQ" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faFacebook}/></a>
-            <a className="shop-link" href="https://grand-overon.in.ua" target="_blank" rel="noopener noreferrer">Интернет магазин</a>
+            <div className="footer__company-links">
+              <a className="footer__company-fb" href="https://www.facebook.com/grandoveron/?eid=ARC_NEv5QFX12hqKIuhUU49tXCQjU8IzHDzePJNHkj82_FBaeEBOjzRKZtBapoYuoMcbkIzpaPdrfmZQ" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faFacebook}/></a>
+  <a className="shop-link" href="https://grand-overon.in.ua" target="_blank" rel="noopener noreferrer" data-title={translations.shop}></a>
+            </div>
           </div>
           <div className="footer__contacts">
             <div className="footer__address"><FontAwesomeIcon icon={faMapMarkerAlt}/>
-              <span>Київ, вул. Градинська 7, оф. 182</span>
-              <a href="https://www.google.com.ua/maps/place/%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0,+7,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/@50.5183672,30.5964635,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4d10f43e4c183:0x332ddb07fefcbdc4!8m2!3d50.5183638!4d30.5986522?hl=ru" target="_blank" rel="noopener noreferrer">(на картi)</a>
+              <span>{translations.address}</span>
+              <a href="https://www.google.com.ua/maps/place/%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%93%D1%80%D0%B0%D0%B4%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B0,+7,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/@50.5183672,30.5964635,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4d10f43e4c183:0x332ddb07fefcbdc4!8m2!3d50.5183638!4d30.5986522?hl=ru" target="_blank" rel="noopener noreferrer">( {translations.onMap} )</a>
             </div>
             <div className="footer__schedule">
             <FontAwesomeIcon icon={faClock}/>
@@ -52,11 +55,12 @@ function Footer() {
             </div>
           </div>
           <div className="footer__links">
-            <a href="https://grand-overon.in.ua/solnechnye-batarei/solnechnye-batarei.html" target="_blank" rel="noopener noreferrer">Сонячні панелі</a>
-            <a href="https://grand-overon.in.ua/invertory-i-akkumulyatory/invertory.html?features_hash=9-69" target="_blank" rel="noopener noreferrer">Мережеві інвертори</a> 
+            <a href="https://grand-overon.in.ua/solnechnye-batarei/solnechnye-batarei.html" target="_blank" rel="noopener noreferrer">{translations.solarPanels}</a>
+            <a href="https://grand-overon.in.ua/invertory-i-akkumulyatory/invertory.html?features_hash=9-69" target="_blank" rel="noopener noreferrer">{translations.invertors}</a> 
           </div>
-        </div>       
+        </div>      
       </div>
+      <div className="footer__copyrights">GrandOveron &copy; {today.getFullYear()}</div>
     </footer>
   )}
 

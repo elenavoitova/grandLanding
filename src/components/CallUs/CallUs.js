@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPhoneVolume} from '@fortawesome/fontawesome-free-solid';
 import "./CallUs.scss";
 
-function CallUs() {
+function CallUs({translations}) {
   return (
     <section className="call-us">
       <div className="container">
         <div className="call-us__wrap">
-          <div className="call-us__img" style={{backgroundImage: "url(./img/stock-photo-solar-cell-contractor-document-with-orange-engineering-team-helmet-on-solar-cells-panels-renewable-576077317.jpg)"}}></div>
+          <div className="call-us__img" style={{backgroundImage: "url(./img/shutterstock_576077317.jpg)"}}></div>
           <div className="call-us__icon">
           <span className="outer">
           <div className="inner">
@@ -17,8 +17,11 @@ function CallUs() {
         </span>
           </div>
           <div className="call-us__info">
-            <h4 className="call-us__info-main">У вас є запитання? Зателефонуйте нам <a href="tel:0674686836">+38 (067) 468-68-36</a></h4>
-            <div className="call-us__info-additional">Ви отримаєте безкоштовну професійну консультацію у сфері сонячної енергетики</div>
+            <h4 className="call-us__info-main">{translations.main}
+            <div className="call-us__separator"></div>
+            <a href="tel:0674686836">+38 (067) 468-68-36</a>
+            </h4>
+            <div className="call-us__info-additional">{translations.sub}</div>
           </div>
         </div>
       </div>

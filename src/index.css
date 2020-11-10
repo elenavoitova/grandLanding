@@ -35,22 +35,22 @@ body.lock {
 ::-webkit-scrollbar{
   width: 5px;
   background-color: #20242c;
-  opacity: 0;
+  /* opacity: 1; */
 }
  
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0);
 }
  
-::-webkit-scrollbar-thumb:vertical {
+::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, transparent 20%, #ff7029);
   border-radius: 20px;
 }
 
-::-webkit-scrollbar-thumb:horizontal {
+/* ::-webkit-scrollbar-thumb:horizontal {
   background: linear-gradient(to right, transparent 20%, #ff7029);
   border-radius: 20px;
-}
+} */
 
 h1,
 h2,

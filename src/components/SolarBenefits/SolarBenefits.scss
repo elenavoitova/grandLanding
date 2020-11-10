@@ -2,6 +2,7 @@
 
 .benefits {
     position: relative;
+    margin-bottom: 70px;
 
     &__i {
         position: absolute;
@@ -16,7 +17,7 @@
         font-size: 144px;
         text-transform: uppercase;
         color: transparent;
-        filter: drop-shadow(3px 3px 7px #4d4b4bd2);
+        filter: drop-shadow(3px 3px 7px #908f8f);
         user-select: none;
     }
 
@@ -96,6 +97,10 @@
         height: 70px;
     }
 
+    &__grid-item:hover  &__grid-icon{
+        filter: hue-rotate(90deg)
+    }
+
     &__grid-text {
         text-align: center;
     }
@@ -105,17 +110,63 @@
     transform: rotate(20deg);
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (min-width: 993px) and (max-width: 1200px){
     .benefits {
+        // position: relative;
+        margin-bottom: 50px;
+    
+        &__grid {
+            padding: 50px 0;
+            justify-content: space-evenly;
+        }
+    
+        &__grid-item {
+            width: 300px;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 50px;
+    
+            &:before {
+                left: -10px;
+                width: 10px;
+                height: 200px;
+            }
+    
+            &:after {
+                top: -10px;
+                left: -10px;
+                width: 300px;
+                height: 10px;
+            }
+        }
+    
+        &__grid-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__grid-title {
+            font-size: 18px;
+        }
+    
+        &__grid-text {
+            font-size: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .benefits {
+        margin-bottom: 0px;
+        
         & .container {
             width: 100vw;
         }
     
         &__i {
-            left: calc(50% - 200px); //466px / 2
+            left: calc(50% - 298px);
             letter-spacing: 1px;
-            // line-height: 110px;
-            font-size: 60px;
+            font-size: 90px;
         }
     
         & .logo {
@@ -125,61 +176,115 @@
         &__title {
             top: 32px;
             padding: 30px 0 0 0;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 30px;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 33px;
         }
     
         &__grid {
             margin-top: 0px;
-            padding: 70px 0;
+            padding: 100px 0 80px;
             justify-content: space-evenly;
         }
     
         &__grid-item {
-            width: 160px;
-            height: 160px;
+            width: 250px;
+            height: 250px;
             padding: 15px 5px;
-            margin-bottom: 30px;
-            box-shadow: -14px -14px 0px -8px $juicy-green;
-            transform: skew(0deg, 0deg) rotate3d(0, 0, 0, 0deg);
-            -webkit-transform: skew(0deg, 0deg) rotate3d(0, 0, 0, 0deg);
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 50px;
+            box-shadow: -20px -20px 0px -8px $juicy-green;
+            transform: unset;
+            -webkit-transform: unset;
             font-style: normal;
             filter: drop-shadow(11px 11px 8px #252525);
-            // background-image: linear-gradient(to right, #20242cb3, #053e05, #20242cb3);
             background-color: #20242c6b;
             color: #fff;
-    
-    
-            &:hover {
-                transform: skew(0deg, 0deg) rotate3d(0, 0, 0, 0deg);
-                -webkit-transform: skew(0deg, 0deg) rotate3d(0, 0, 0, 0deg);
-            }
     
             &:before {
                 content: "";
                 position: absolute;
-                left: -3px;
-                top: -3px;
-                width: 3px;
-                height: 155px;
+                left: -5px;
+                top: -5px;
+                width: 5px;
+                height: 240px;
                 background-image: linear-gradient(to bottom, $juicy-orange, #fa5a03);
-                // background-color: $juicy-orange;
                 clip-path: unset;
-                // filter: grayscale(1);
             }
     
             &:after {
                 content: "";
                 position: absolute;
+                top: -5px;
+                left: -5px;
+                width: 240px;
+                height: 5px;
+                background-image: linear-gradient(to right, $juicy-orange, #fa5a03);
+                clip-path: unset;
+            }
+
+            &:hover {
+                transform: unset;
+                -webkit-transform: unset;
+            }
+        }
+    
+        &__grid-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        &__grid-title {
+           font-size: 18px;
+        }
+
+        &__grid-text {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .benefits {
+    
+        &__i {
+            left: calc(50% - 200px); //466px / 2
+            letter-spacing: 1px;
+            font-size: 60px;
+        }
+    
+        &__title {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+    
+       &__grid {
+            padding: 70px 0;
+        }
+    
+        &__grid-item {
+            width: 160px;
+            height: 160px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 30px;
+            box-shadow: -14px -14px 0px -8px $juicy-green;
+    
+            &:before {
+                left: -3px;
+                top: -3px;
+                width: 3px;
+                height: 155px;
+            }
+    
+            &:after {
                 top: -3px;
                 left: -3px;
                 width: 155px;
                 height: 3px;
-                background-image: linear-gradient(to right, $juicy-orange, #fa5a03);
-                // background-color: $juicy-orange;
-                clip-path: unset;
-                // filter: grayscale(1);
             }
         }
     
@@ -194,11 +299,6 @@
 
         &__grid-text {
             font-size: 11px;
-            text-align: center;
         }
-    }
-    
-    .benefits__grid-item:hover .benefits__grid-item::before{
-        transform: rotate(20deg);
-    }
+    }  
 }
